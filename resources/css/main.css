@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+button:focus {
+    outline: none;
+}
+
+#backDrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+}
+
+#backDrop.visible {
+    display: block;
+    pointer-events: all;
+}
+
+.top {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(21, 21, 145);
+    padding: 1rem 2.5rem;
+    z-index: 2;
+}
+
+.top a:visited,
+.top a:link {
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    background-color: orange;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    color: white;
+    text-transform: uppercase;
+    transition: 1s;
+    border: none;
+    box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.3);
+}
+
+.top a:hover {
+    background-color: rgb(235, 110, 7);
+}
+
+.top h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 2.4rem;
+}
+
+.listMovies {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+ul {
+    margin-top: 30px;
+}
+
+.entryText {
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.26);
+    height: 70%;
+    width: 75%;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+.entryText p {
+    color: black;
+    font-size: 2.2rem;
+    font-weight: 600;
+    padding: 3rem 0;
+}
+
+#movieList {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#movieList li {
+    width: 100%;
+    list-style: none;
+}
+
+
+/******************** Modal ****************************/
+
+.card {
+    font-size: 1.4rem;
+    width: 40%;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+    padding: 4rem 2rem;
+    margin: 3rem auto;
+}
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    background: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    transition: 2s;
+}
+
+.modal.visible {
+    display: block;
+    animation: moveUp 1s;
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    font: inherit;
+    border: 0.1rem solid #ccc;
+    padding: 0.64rem 0.32rem;
+    color: #383838;
+}
+
+input:focus {
+    outline: none;
+    background: #fff1c4;
+}
+
+.modal__content input {
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.modalActions button {
+    display: block;
+    margin-left: 2rem;
+    margin-right: 0;
+}
+
+.btnSuccess {
+    background-color: orange;
+    color: white;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
+}
+
+.btnPassive {
+    background-color: white;
+    color: orange;
+}
+
+.modalTitle {
+    color: #072b77;
+    margin-bottom: 2rem;
+}
+
+.modalContent {
+    margin-bottom: 2rem;
+}
+
+.modal-2 .modalActions,
+.modalActions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+
+/************************ Card Horizontal ***********************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+.card_Horizontal {
+    font-family: "Roboto";
+    background: linear-gradient(to bottom right, #67b26f, #4ca2cd);
+    background-repeat: no-repeat;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    align-items: center;
+    height: 10rem;
+}
+
+.card_ImageBox {
+    display: flex;
+    flex: 0 0 35%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card_Image {
+    display: block;
+    width: 100%;
+}
+
+.card_Content {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 10px;
+    flex-basis: 65%;
+    height: 100%;
+}
+
+
+/******************************** Rating *******************************/
+
+.ratingBox {
+    height: 100%;
+    width: 100%;
+    margin: 10px auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.ratingBox h1 {
+    margin-bottom: 1rem;
+}
+
+.ratingBox p {
+    font-size: 1.4rem;
+}
+
+.barRatingContainer {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ratingContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.starContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.starIcon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    font-size: 2.5rem;
+    color: orange;
+    fill: orange;
+}
+
+.checked {
+    color: orange;
+}
+
+
+/* The bar container */
+
+.bar-container {
+    flex-basis: 80%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+}
+
+.ratingContainer>div:last-child {
+    flex-grow: 1;
+}
+
+
+/* Individual bars */
+
+.bar-5 {
+    width: 60%;
+    height: 18px;
+    background-color: #04aa6d;
+}
+
+.bar-4 {
+    width: 30%;
+    height: 18px;
+    background-color: #2196f3;
+}
+
+.bar-3 {
+    width: 10%;
+    height: 18px;
+    background-color: #00bcd4;
+}
+
+.bar-2 {
+    width: 4%;
+    height: 18px;
+    background-color: #ff9800;
+}
+
+.bar-1 {
+    width: 15%;
+    height: 18px;
+    background-color: #f44336;
+}
+
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+
+@media (max-width: 400px) {
+    .side,
+    .middle {
+        width: 100%;
+    }
+    .right {
+        display: none;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100%) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}

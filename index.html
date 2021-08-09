@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://use.fontawesome.com/a7b527e557.js"></script>
+    <link href="resources/css/animation.css" rel="stylesheet" type="text/css" />
+    <link href="resources/css/main.css" rel="stylesheet" type="text/css" />
+
+    <script src="resources/js/index.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="backDrop"></div>
+
+        <div class="modal card modal-1" id="addModal">
+            <div class="modal__content">
+                <label for="title">Movie Title</label>
+                <input type="text" id="title" name="title" required />
+                <label for="imgUrl">Image URL</label>
+                <input type="url" id="imgUrl" name="imgUrl" required />
+                <label for="rating">Your Rating</label>
+                <input type="number" step="1" min="1" max="5" id="rating" name="rating" required />
+                <div class="modalActions">
+                    <button class="btn btnPassive" id="model1Cancel">Cancel</button>
+                    <button class="btn btnSuccess" id="model1Add">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal card modal-2" id="deleteMovieModal">
+            <h2 class="modalTitle">Are you sure?</h2>
+            <p class="modalContent">
+                Are you sure you want to delet this item? This action cannot be made undone!
+            </p>
+            <div class="modalActions">
+                <button class="btn btnPassive">No (Cancel)</button>
+                <button class="btn btnSuccess">Yes</button>
+            </div>
+        </div>
+
+        <header>
+            <div class="top">
+                <h1>Favorite Movies</h1>
+                <a href="#">Add Movie</a>
+            </div>
+        </header>
+        <section>
+            <div class="listMovies">
+                <div class="entryText">
+                    <p>Your Movies database!</p>
+                </div>
+
+                <ul id="movieList"></ul>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
